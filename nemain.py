@@ -14,11 +14,13 @@ def parse():
     for name in items:
         vacancy.append(name.text)  #добавляем вакансии в список
         print(name)
-    file = 'SpisokVacancy.xlsx' #создаём файловую переменную
-    wb = load_workbook(file) #создаём переменную, которая будет загружать файл SpisokVacancy.xlsx
-    ws = wb['list1']  #создаём переменную, указывающую на лист, с которым будем работать
-    for element in vacancy:
-        text = element  #создаём строковую переменную
-        ws.append([text])  #заносим строковую переменную в файл(на указанный лист)
-    wb.save(file)  #сохраняем изменения
-    wb.close()  # закрываем файл
+    def zapis():
+        file = 'SpisokVacancy.xlsx' #создаём файловую переменную
+        wb = load_workbook(file) #создаём переменную, которая будет загружать файл SpisokVacancy.xlsx
+        ws = wb['list1']  #создаём переменную, указывающую на лист, с которым будем работать
+        for element in vacancy:
+            text = element  #создаём строковую переменную
+            ws.append([text])  #заносим строковую переменную в файл(на указанный лист)
+        wb.save(file)  #сохраняем изменения
+        wb.close()  # закрываем файл
+    zapis()
